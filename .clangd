@@ -1,0 +1,36 @@
+CompileFlags:
+  CompilationDatabase: /workspace/build
+Index:
+    Background: Build
+Completion:
+    AllScopes: true
+Hover:
+    ShowAKA: true
+InlayHints:
+    Enabled: true
+Diagnostics:
+    UnusedIncludes: Strict
+    ClangTidy:
+        Add:
+            - bugprone-*
+            - performance-*
+            - modernize-use-nullptr
+            - modernize-use-override
+            - modernize-use-emplace
+            - modernize-use-equals-default
+            - modernize-use-equals-delete
+        Remove:
+            - modernize-loop-convert
+            - readability-*
+            - cppcoreguidelines-*
+            - hicpp-*
+            - google-*
+            - fuchsia-*
+            - modernize-use-trailing-return-type
+            - modernize-use-auto
+            - modernize-pass-by-value
+            - modernize-return-braced-init-list
+            - modernize-avoid-bind
+            - modernize-use-nodiscard
+            - llvm-header-guard
+            - bugprone-easily-swappable-parameters

@@ -1,0 +1,24 @@
+{
+    "name": "HTTP Server Dev",
+    "image": "http_server_dev:latest",
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpp-devtools",
+                "llvm-vs-code-extensions.vscode-clangd",
+                "ms-vscode.cmake-tools",
+                "shaobeichen.gradient-theme",
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack"
+            ],
+            "settings": {
+                // 禁用自带的 C/C++ 插件的智能感知，避免冲突
+                "C_Cpp.intelliSenseEngine": "disabled"
+            }
+        }
+    },
+    "forwardPorts": [8080, 9527],
+    "postStartCommand": "mkdir -p build && (socat TCP-LISTEN:9527,reuseaddr,fork 'EXEC:clangd --compile-commands-dir=/workspace/build --query-driver=/usr/bin/g++' &)"
+}

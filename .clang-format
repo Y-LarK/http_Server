@@ -1,0 +1,16 @@
+---
+# 基础风格
+BasedOnStyle: LLVM
+# 核心：大括号换行风格（Allman）
+BreakBeforeBraces: Allman
+# 缩进宽度
+IndentWidth: 4
+# 允许短函数写在一行吗？
+AllowShortFunctionsOnASingleLine: false
+# 限制行宽
+ColumnLimit: 100
+# 指针对齐方式（靠左 int* ptr 或 靠右 int *ptr）
+PointerAlignment: Left
+# 连续赋值对齐（可选，视觉更整齐）
+AlignConsecutiveAssignments: true
+---
